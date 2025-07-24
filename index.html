@@ -108,6 +108,22 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<!-- MODIFICATION: Added redirectToTaskPage function -->
+			<script>
+				function redirectToTaskPage() {
+					// User information আছে কিনা তা চেক করা হচ্ছে
+					if (!currentUser || !currentUser.id) {
+						showToast("User information not found. Please restart the app.");
+						return;
+					}
+					
+					// আপনার টাস্ক ল্যান্ডিং পেজের নতুন ঠিকানা
+					const taskPageUrl = `https://task.allinonebd.me?userId=${currentUser.id}`;
+					
+					// ব্যবহারকারীকে নতুন লিঙ্কে পাঠানো হচ্ছে
+					window.Telegram.WebApp.openLink(taskPageUrl);
+				}
+			</script>
 
 	</body>
 </html>

@@ -4111,3 +4111,18 @@ input, select, textarea {
 					}
 
 	}
+
+/* --- Product Link Hover Effect --- */
+
+#four .box.alt .product-link {
+    text-decoration: none;
+    border-bottom: none;
+    color: inherit;
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+#four .box.alt .product-link:hover {
+    text-decoration: underline;
+    transform: translateY(-5px);
+}
